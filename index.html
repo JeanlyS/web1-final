@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Open Sans is required for the assignment -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <title>Final HTML Mockup</title>
+</head>
+
+<body>
+
+    <!-- Instead of making everything complicated its all straightforward so i can remeber what I can edit in CSS no unique names anymore :( -->
+    <div class="logo-container">
+        <img src="images/logo.png" alt="Logo of stars" class="logo">
+    </div>
+
+    <!-- Whole navagation list, Went back to my mideterm and used # and IDs to hook the "teleport" function -->
+    <nav class="nav-container">
+        <ul class="nav-list">
+            <li><a href="#HOME">Home</a></li>
+            <li><a href="#ABOUT">About us</a></li>
+            <li><a href="#SERVICES">Services</a></li>
+            <li><a href="#TEAM">Team</a></li>
+            <li><a href="#CONTACT">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- This is for the sear4ch bar, The icon was taken from Bootstrap icons -->
+    <form action="/search" method="get" class="search-bar">
+        <input type="search" id="site-search" name="q" placeholder="Search" required>
+        <button type="submit"><i class="bi bi-search"></i></button>
+    </form>
+
+    <main>
+
+        <!--This part has too many sections and divs-->
+        <section class="tsmhome" id="HOME">
+            <h1>Welcome to Three Star Media</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+            <button class="btn connect">Connect with us<i class="bi bi-caret-right-fill"></i></button>
+
+            <div class="image-block">
+                <img src="images/main-banner.jpg" alt="Main banner image with an office space">
+            </div>
+        </section>
+
+        <!--MOST of the classes names are normal for easier maintenance and refrences. However, There is WAY too much divs and sections but thats probably a good thing-->
+        <section class="about-section" id="ABOUT">
+            <div class="image-block">
+                <img src="images/about-us.jpg" alt="Table">
+            </div>
+
+            <div class="about-content">
+                <h2>About Us</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+            </div>
+        </section>
+
+        <section class="services-section" id="SERVICES">
+            <h2>Our Services</h2>
+
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="images/digital.jpg" alt="Computer and phone">
+                </div>
+
+                <h3>Digital Transformation</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+
+                <button class="btn service digital">Digital Plans <i class="bi bi-caret-right-fill"></i></button>
+            </div>
+
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="images/marketing.jpg" alt="Laptop with marketing screen">
+                </div>
+
+                <h3>Marketing</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+
+                <button class="btn service marketing">Marketing Plans<i class="bi bi-caret-right-fill"></i></button>
+            </div>
+
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="images/video.jpg" alt="Phone with YouTube logo">
+                </div>
+
+                <h3>Video Production</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+
+                <button class="btn service video">Video Plans<i class="bi bi-caret-right-fill"></i></button>
+            </div>
+
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="images/web.jpg" alt="Notepad and phone">
+                </div>
+
+                <h3>Web Development</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+
+                <button class="btn service web">Web Plans<i class="bi bi-caret-right-fill"></i></button>
+            </div>
+
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="images/print.jpg" alt="Mailboxes">
+                </div>
+
+                <h3>Print</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+
+                <button class="btn service-btn print-btn">Print Plans<i class="bi bi-caret-right-fill"></i></button>
+            </div>
+        </section>
+
+        <section class="Our Vision" id="VISION">
+            <div class="imageforvisionidk">
+                <img src="images/vision.jpg" alt="Vision image">
+
+                <h2>Our Vision</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+
+                <button class="btn vision">Learn More<i class="bi bi-caret-right-fill"></i></button>
+            </div>
+        </section>
+
+        <section class="Doe" id="TEAM">
+            <div class="CEO">
+                <h1>Our Team</h1>
+                <img src="images/john.jpg" alt="an image of John Doe">
+
+                <!--This is the section for CEO and CFO Dont think I should have put the heading within but hey It worked out so im not complaining.-->
+            </div>
+
+            <h3>John Doe</h3>
+            <h5>CEO and Co-owner</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+        </section>
+
+        <section class="Bob">
+            <div class="CFO">
+                <img src="images/bob.jpg" alt="an image of Bob Rite">
+            </div>
+
+            <h3>Bob Rite</h3>
+            <h5>CFO and Co-owner</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+        </section>
+
+        <section class="ContactBigMedia3" id="CONTACT">
+            <h2 class="ContactBigMedia3title">Contact Us</h2>
+            <h3>Send us a message</h3>
+
+            <form class="ContactBigMedia3form">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit" class="ContactBigMedia3submitbutton">SEND</button>
+            </form>
+
+
+            <!-- Map is inside Contact so it can sit beside the form on desktop -->
+            <section class="location">
+                <h3>Location</h3>
+
+                <!-- Actual Google Maps embed -->
+                <iframe
+                    class="map"
+                    src="https://www.google.com/maps?q=Algonquin%20College%20Ottawa&output=embed"
+                    title="Google Maps showing Algonquin College in Ottawa"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </section>
+            <!-- "hey google, How do i embed a map into an HTML page?" Honestly thought it was harder. Idk what the refferpolicy is tho.-->
+
+            <!-- Divs and classes may have made me lose my mind way too many to keep track of but I guess it helps when styling everythign so theres a plus.-->
+        </section>
+
+        <section class="HOO">
+            <h2>Hours Of Operation</h2>
+
+            <article>
+                <div><p>Days</p></div>
+                <div><p>Hours</p></div>
+
+                <div><p>Monday - Friday</p></div>
+                <div><p>9 AM - 6 PM</p></div>
+
+                <div><p>Saturday - Sunday</p></div>
+                <div><p>Closed</p></div>
+            </article>
+        </section>
+
+        <!-- Copyright and image credits -->
+        <footer>
+            <p class="CopyrightMedia3">&copy; Copyright Three Star Media, 2020. <br>all images taken from unsplash</p>
+        </footer>
+
+    </main>
+
+</body>
+</html>

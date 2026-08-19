@@ -1,0 +1,1268 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* =========================================================
+   Strat after reset
+   ========================================================= */
+
+/*this was actually really challenging. At the end i didnt get a few things right but i got most of it down took me so long to do however again i did the best i could and from what i remember. There was a lot of trial and error but i got the best looking version while its not 1-1 its still close*/
+/*had to search this up and its basically a way to make the padding and border stay inside the width and height I se so the element doesnt end up being bigger than I wanted.*/
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+
+    background-color: white;
+    color: #222;
+
+    line-height: 1.4;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input,
+textarea {
+    font-family: inherit;
+}
+
+h1,
+h2,
+h3,
+h5 {
+    font-weight: 700;
+}
+
+p {
+    font-size: 13px;
+}
+
+/* ABSOLUTLY HATED THIS CAUSE IT OVERLAPPED AND THE LOGO ALWAYS GOT MESSED UP */
+   
+
+.logo-container {
+    width: 100%;
+
+    height: 155px;
+
+    padding: 15px;
+
+    background-color: #c78c06;
+}
+
+.logo-container {
+    position: relative;
+    z-index: 30;
+}
+
+.logo {
+    width: 65px;
+    height: 65px;
+
+    object-fit: cover;
+}
+
+/*This is the giant navigation mess but at least it works*/
+
+.nav-container {
+    width: 100%;
+
+    padding: 0 15px 15px;
+
+    background-color: #222;
+}
+
+.nav-list {
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+}
+
+.nav-list li {
+    width: 100%;
+
+    margin: 5px 0;
+
+    text-align: center;
+}
+
+.nav-list a {
+    color: #c78c06;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.nav-list a:hover {
+    color: white;
+}
+
+
+/*Home needed to be inside the yellow thing so this took way more messing around than it should have (Looking back i notice a weird overlap lowkey have no clue how to fix that)*/
+
+.nav-list li:first-child {
+    width: 100%;
+
+    margin-top: 0;
+
+    padding: 10px 0;
+
+    background-color: #c78c06;
+}
+
+.nav-list li:first-child a {
+    color: #222;
+}
+
+
+/*This is for the search bar and the little icon which is from Bootstrap icons because normal icon wasnt enough*/
+
+.search-bar {
+    display: flex;
+
+    width: 100%;
+
+    padding: 8px 4px 10px;
+
+    background-color: #222;
+}
+
+.search-bar input {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 8px;
+
+    border: 2px solid #c78c06;
+    border-right: 0;
+
+    outline: none;
+
+    background-color: white;
+    color: #222;
+}
+
+.search-bar input::placeholder {
+    color: #222;
+}
+
+.search-bar button {
+    width: 40px;
+    min-width: 40px;
+
+    border: 2px solid #c78c06;
+
+    background-color: #c78c06;
+    color: #222;
+
+    cursor: pointer;
+}
+
+.search-bar button i {
+    font-size: 16px;
+}
+
+/*comment goes here but to remind me to fix buttons*/
+
+.btn {
+    padding: 14px 18px;
+
+    border: none;
+
+    background-color: #222;
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 13px;
+}
+
+.btn i {
+    margin-left: 8px;
+}
+
+.btn:hover {
+    background-color: #c78c06;
+    color: #222;
+}
+
+.tsmhome {
+    position: relative;
+
+    min-height: 500px;
+
+    padding: 40px 20px;
+
+    overflow: hidden;
+
+    color: white;
+}
+
+.tsmhome .image-block {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 0;
+}
+
+.tsmhome .image-block img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/*Had to search this up because I wanted thedark layer over the image without editing the image itself*/
+
+.tsmhome::after {
+    content: '';
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(34, 34, 34, 0.55);
+
+    z-index: 1;
+}
+
+.tsmhome h1,
+.tsmhome p,
+.tsmhome .connect {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/*This box took me forever to get right and I hated doing it lol (I didnt get it right)*/
+
+.tsmhome h1,
+.tsmhome p {
+    width: fit-content;
+
+    max-width: 750px;
+
+    background-color: rgba(34, 34, 34, 0.65);
+}
+
+.tsmhome h1 {
+    margin-bottom: 0;
+
+    padding: 20px 20px 10px;
+
+    font-size: 42px;
+    line-height: 1.1;
+}
+
+.tsmhome p {
+    margin-bottom: 15px;
+
+    padding: 0 20px 20px;
+
+    font-size: 13px;
+
+    line-height: 1.45;
+}
+
+
+/*Made this smaller so it doesnt look like one giant button stretching across the page (styling ofc)*/
+
+.tsmhome .connect {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+    min-width: 150px;
+    height: 46px;
+
+    margin-top: 5px;
+
+    padding: 0 18px;
+
+    border: 1px solid #c78c06;
+
+    background-color: #c78c06;
+    color: #222;
+
+    font-size: 13px;
+}
+
+.tsmhome .connect i {
+    margin-left: 8px;
+}
+
+.tsmhome .connect:hover {
+    background-color: #222;
+    color: white;
+}
+
+
+/* =========================================================
+   ABOUT US I hated this cause it was too much trial and error eventually i got it tho i think.
+   ========================================================= */
+
+
+.about-section {
+    width: 100%;
+
+    padding: 25px 20px;
+
+    background-color: #ffe6ac;
+}
+
+.about-section .image-block {
+    width: 100%;
+
+    margin-bottom: 20px;
+}
+
+.about-section img {
+    width: 100%;
+}
+
+.about-content h2 {
+    margin-bottom: 10px;
+
+    font-size: 28px;
+}
+
+.about-content p {
+    margin-bottom: 10px;
+}
+
+.services-section {
+    width: 100%;
+
+    padding: 30px 20px;
+}
+
+.services-section > h2 {
+    margin-bottom: 20px;
+
+    font-size: 28px;
+}
+
+.service-card {
+    width: 100%;
+
+    margin-bottom: 15px;
+
+    padding-bottom: 15px;
+
+    background-color: #ffe6ac;
+
+    overflow: hidden;
+}
+
+.service-image {
+    width: 100%;
+}
+
+.service-image img {
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+}
+
+.service-card h3 {
+    padding: 15px 15px 5px;
+
+    font-size: 21px;
+}
+
+.service-card p {
+    padding: 0 15px;
+
+    margin-bottom: 15px;
+}
+
+.service-card .btn {
+    margin-left: 15px;
+}
+
+.Our.Vision {
+    width: 100%;
+
+    overflow: hidden;
+
+    color: white;
+}
+
+.imageforvisionidk {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 220px;
+
+    padding: 35px 20px;
+
+    overflow: hidden;
+}
+
+.imageforvisionidk img {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 0;
+}
+
+
+/*Same trick as the home banner image thing because otherwise the text is hard to read*/
+
+.imageforvisionidk::after {
+    content: '';
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(34, 34, 34, 0.4);
+
+    z-index: 1;
+}
+
+.imageforvisionidk h2,
+.imageforvisionidk p,
+.imageforvisionidk .vision {
+    position: relative;
+
+    z-index: 2;
+}
+
+.imageforvisionidk h2 {
+    margin-bottom: 10px;
+
+    font-size: 28px;
+}
+
+.imageforvisionidk p {
+    max-width: 850px;
+
+    margin-bottom: 20px;
+}
+
+
+/*Orange outline around learn more cause I had to copy it*/
+
+.imageforvisionidk .vision {
+    border: 1px solid #c78c06;
+}
+
+/*Keeping the two people as separate sections made this way easier to style*/
+
+.Doe,
+.Bob {
+    width: 90%;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    background-color: #ffe6ac;
+}
+
+.Doe {
+    margin-top: 30px;
+}
+
+.Doe .CEO h1 {
+    margin-bottom: 20px;
+
+    background-color: white;
+
+    font-size: 28px;
+}
+
+.CEO img,
+.CFO img {
+    width: 100%;
+    height: 280px;
+
+    object-fit: cover;
+}
+
+.Doe h3,
+.Bob h3 {
+    padding: 15px 15px 0;
+
+    font-size: 22px;
+}
+
+.Doe h5,
+.Bob h5 {
+    padding: 0 15px;
+
+    margin-bottom: 5px;
+}
+
+.Doe p,
+.Bob p {
+    padding: 0 15px 20px;
+}
+
+/*Contact form was one of those things that looked easy until I actually had to style it*/
+
+.ContactBigMedia3 {
+    width: 100%;
+
+    padding: 35px 20px 20px;
+}
+
+.ContactBigMedia3title {
+    margin-bottom: 25px;
+
+    font-size: 30px;
+}
+
+.ContactBigMedia3 h3 {
+    margin-bottom: 15px;
+}
+
+
+/*Flexbox is here because it makes the form stack nicely without me manually positioning everything*/
+
+.ContactBigMedia3form {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.ContactBigMedia3form label {
+    margin-bottom: 3px;
+
+    font-size: 12px;
+}
+
+.ContactBigMedia3form input,
+.ContactBigMedia3form textarea {
+    width: 100%;
+
+    padding: 8px;
+
+    margin-bottom: 10px;
+
+    border: 1px solid #222;
+}
+
+.ContactBigMedia3form textarea {
+    min-height: 120px;
+
+    resize: vertical;
+}
+
+.ContactBigMedia3submitbutton {
+    align-self: flex-start;
+
+    padding: 8px 12px;
+
+    border: none;
+
+    background-color: #222;
+    color: white;
+
+    cursor: pointer;
+}
+
+.ContactBigMedia3submitbutton:hover {
+    background-color: #c78c06;
+    color: #222;
+}
+
+.location {
+    width: 100%;
+
+    padding: 25px 0 10px;
+}
+
+.location h3 {
+    margin-bottom: 10px;
+
+    font-size: 22px;
+}
+
+.map {
+    width: 100%;
+    min-height: 300px;
+
+    border: 0;
+}
+
+
+/* =========================================================
+   HOURS OF OPERATION HOO lol
+   ========================================================= */
+
+/*Used Grid here because the table thing was getting annoying with normal divs*/
+
+.HOO {
+    width: 100%;
+
+    padding: 20px;
+}
+
+.HOO h2 {
+    margin-bottom: 10px;
+
+    font-size: 22px;
+}
+
+.HOO article {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    border: 1px solid #222;
+}
+
+.HOO article div {
+    padding: 10px;
+
+    border-right: 1px solid #222;
+    border-bottom: 1px solid #222;
+}
+
+.HOO article div:nth-child(1),
+.HOO article div:nth-child(2) {
+    background-color: #ffe6ac;
+
+    font-weight: 700;
+}
+
+.HOO article p {
+    font-size: 12px;
+}
+
+
+/*Always gotta have the footer*/
+
+footer {
+    width: 100%;
+
+    padding: 20px;
+
+    background-color: #222;
+    color: #c78c06;
+}
+
+.CopyrightMedia3 {
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   Scren sizes 760px and up till 1200px i think
+   ========================================================= */
+
+@media screen and (min-width: 760px) {
+
+    .services-section,
+    .Doe,
+    .Bob,
+    .ContactBigMedia3,
+    .HOO {
+        max-width: 1200px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /*Finally centered this properly because the search bar kept making the whole thing look crooked. A lot of this stuff i had to go back n find and a lot of it was search up */
+
+    .nav-container {
+        position: relative;
+
+        height: 80px;
+
+        padding: 0;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        background-color: #222;
+    }
+
+    .nav-list {
+        flex-direction: row;
+
+        align-items: center;
+        justify-content: center;
+
+        gap: 32px;
+
+        width: auto;
+
+        margin: 0;
+
+        position: absolute;
+
+        left: 50%;
+        transform: translateX(-50%);
+
+        z-index: 20;
+    }
+
+    .nav-list li {
+        width: auto;
+
+        margin: 0;
+    }
+
+    .nav-list li:first-child {
+        width: auto;
+
+        margin: 0;
+
+        padding: 0;
+
+        background-color: transparent;
+    }
+
+    .nav-list li:first-child a {
+        background-color: transparent;
+        color: #c78c06;
+    }
+
+    .nav-list a {
+        font-size: 14px;
+    }
+
+    .logo-container {
+        position: absolute;
+
+        top: 0;
+        left: 5%;
+
+        width: 65px;
+        height: 65px;
+
+        padding: 0;
+
+        background-color: transparent;
+
+        z-index: 30;
+    }
+
+    .logo {
+        width: 65px;
+        height: 65px;
+    }
+
+    /*HATED the search bar forgot how to make it not cover contarct nav but i left it cause it hurt my head too much */
+
+    .search-bar {
+        position: absolute;
+
+        top: 20px;
+        right: 5%;
+
+        width: 225px;
+
+        padding: 4px;
+
+        background-color: #222;
+
+        z-index: 30;
+    }
+
+    .search-bar input {
+        height: 34px;
+    }
+
+    .search-bar button {
+        width: 40px;
+    }
+
+    /* Desktop banner image thing is bigger so it actually looks somewhat like the mockup*/
+
+    .tsmhome {
+        min-height: 500px;
+
+        padding: 80px 5%;
+
+        display: flex;
+
+        flex-direction: column;
+        justify-content: center;
+    }
+
+
+    /*This part took way too much trial and error but now the heading AND paragraph are together*/
+
+    .tsmhome h1,
+    .tsmhome p {
+        width: fit-content;
+
+        max-width: 750px;
+
+        background-color: rgba(34, 34, 34, 0.65);
+    }
+
+    .tsmhome h1 {
+        margin-bottom: 0;
+
+        padding: 20px 20px 10px;
+
+        font-size: 55px;
+        line-height: 1.1;
+    }
+
+    .tsmhome p {
+        margin-bottom: 15px;
+
+        padding: 0 20px 20px;
+
+        font-size: 13px;
+
+        line-height: 1.45;
+    }
+
+
+    /* BUTTONS! atleast i tried to get a 1-1 replica of the buttons*/
+
+    .tsmhome .connect {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        width: fit-content;
+        min-width: 150px;
+        height: 46px;
+
+        margin-top: 5px;
+
+        padding: 0 18px;
+
+        border: 1px solid #c78c06;
+
+        background-color: #c78c06;
+        color: #222;
+
+        font-size: 13px;
+    }
+
+    .tsmhome .connect i {
+        margin-left: 8px;
+    }
+
+    .tsmhome .connect:hover {
+        background-color: #222;
+        color: white;
+    }
+
+    /*Grid here because the mockup has image on one side and text on the other side*/
+
+    .about-section {
+        padding: 30px 5%;
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 25px;
+
+        align-items: center;
+    }
+
+    .about-section .image-block {
+        margin: 0;
+    }
+
+    .about-content h2 {
+        font-size: 32px;
+    }
+
+    /*Six columns sounds ridiculous but it actually makes the 2 top / 3 bottom layout pretty easy (i hated this)*/
+
+    .services-section {
+        width: 90%;
+
+        padding: 40px 0;
+
+        display: grid;
+
+        grid-template-columns: repeat(6, 1fr);
+
+        gap: 10px;
+    }
+
+    .services-section > h2 {
+        grid-column: 1 / -1;
+
+        font-size: 32px;
+    }
+
+    .service-card:nth-of-type(1),
+    .service-card:nth-of-type(2) {
+        grid-column: span 3;
+    }
+
+    .service-card:nth-of-type(3),
+    .service-card:nth-of-type(4),
+    .service-card:nth-of-type(5) {
+        grid-column: span 2;
+    }
+
+    .service-card {
+        margin: 0;
+    }
+
+    .service-image img {
+        height: 190px;
+    }
+
+
+    /*This one is supposed to stretch all the way across the screen so I left it alone cause i tried something n broke it*/
+
+    .imageforvisionidk {
+        min-height: 220px;
+
+        padding: 45px 5%;
+    }
+
+    .imageforvisionidk h2 {
+        font-size: 32px;
+    }
+
+    .imageforvisionidk p {
+        max-width: 850px;
+    }
+
+    /* Finally making this section wide enough so it doesnt look like a tiny card (had too many issues with this part)*/
+
+    .Doe,
+    .Bob {
+        width: 90%;
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        background-color: transparent;
+    }
+
+    .Doe {
+        margin-top: 70px;
+    }
+
+
+    /* Our Team heading is inside the CEO div so display contents lets the layout work */
+
+    .Doe .CEO {
+        display: contents;
+    }
+
+    .Doe .CEO h1 {
+        grid-column: 1 / -1;
+
+        margin: 0 0 10px;
+
+        background-color: white;
+
+        font-size: 32px;
+    }
+
+    .Doe .CEO img {
+        grid-column: 1;
+        grid-row: 2;
+
+        width: 100%;
+        height: 350px;
+
+        object-fit: cover;
+    }
+
+
+    /*John's side*/
+
+    .Doe h3 {
+        grid-column: 2;
+        grid-row: 2;
+
+        margin: 0;
+
+        padding: 25px 20px 0;
+
+        background-color: #ffe6ac;
+
+        font-size: 22px;
+    }
+
+    .Doe h5 {
+        grid-column: 2;
+        grid-row: 2;
+
+        margin: 60px 0 0;
+
+        padding: 0 20px 10px;
+
+        background-color: #ffe6ac;
+
+        border-bottom: 1px solid #c78c06;
+
+        font-size: 13px;
+    }
+
+    .Doe p {
+        grid-column: 2;
+        grid-row: 2;
+
+        margin: 105px 0 0;
+
+        padding: 20px;
+
+        background-color: #ffe6ac;
+
+        font-size: 11px;
+        line-height: 1.45;
+    }
+
+
+    /* Bob is just flipped around*/
+
+    .Bob {
+        margin-top: 0;
+
+        margin-bottom: 40px;
+    }
+
+    .Bob .CFO {
+        display: contents;
+    }
+
+    .Bob .CFO img {
+        grid-column: 2;
+        grid-row: 1;
+
+        width: 100%;
+        height: 350px;
+
+        object-fit: cover;
+    }
+
+    .Bob h3 {
+        grid-column: 1;
+        grid-row: 1;
+
+        margin: 0;
+
+        padding: 25px 20px 0;
+
+        background-color: #ffe6ac;
+
+        font-size: 22px;
+    }
+
+    .Bob h5 {
+        grid-column: 1;
+        grid-row: 1;
+
+        margin: 60px 0 0;
+
+        padding: 0 20px 10px;
+
+        background-color: #ffe6ac;
+
+        border-bottom: 1px solid #c78c06;
+
+        font-size: 13px;
+    }
+
+    .Bob p {
+        grid-column: 1;
+        grid-row: 1;
+
+        margin: 105px 0 0;
+
+        padding: 20px;
+
+        background-color: #ffe6ac;
+
+        font-size: 11px;
+        line-height: 1.45;
+    }
+    /* This was so much easier after moving the map inside the Contact section in the HTML*/
+
+    .ContactBigMedia3 {
+        width: 90%;
+
+        padding: 35px 0 30px;
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        column-gap: 30px;
+    }
+
+    .ContactBigMedia3title {
+        grid-column: 1 / -1;
+
+        margin-bottom: 25px;
+
+        font-size: 32px;
+    }
+
+    .ContactBigMedia3 > h3 {
+        grid-column: 1;
+
+        font-size: 20px;
+    }
+
+    .ContactBigMedia3form {
+        grid-column: 1;
+
+        width: 100%;
+    }
+
+
+    /*Map sits beside the contact form instead of teleporting somewhere random (Originally had it at the bottome but lowkey wasnt right*/
+
+    .ContactBigMedia3 .location {
+        grid-column: 2;
+        grid-row: 2 / span 2;
+
+        width: 100%;
+
+        padding: 0;
+    }
+
+    .ContactBigMedia3 .location h3 {
+        margin-bottom: 15px;
+
+        font-size: 20px;
+    }
+
+    .map {
+        width: 100%;
+        min-height: 300px;
+    }
+
+
+    /* =====================================================
+       Hours of operation or HOO for short get it?
+       ===================================================== */
+
+    .HOO {
+        width: 90%;
+
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .HOO h2 {
+        font-size: 22px;
+    }
+
+
+    footer {
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+}
+
+
+/* =========================================================
+   Big desktop screen 1200px and above yes
+   ========================================================= */
+
+@media screen and (min-width: 1200px) {
+
+    .nav-list {
+        gap: 45px;
+    }
+
+    .tsmhome h1 {
+        font-size: 60px;
+    }
+
+    .service-image img {
+        height: 210px;
+    }
+}
